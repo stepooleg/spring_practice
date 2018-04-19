@@ -9,22 +9,24 @@
 <div class="container" ng-controller="AppSpr">
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped">
-                <thead class="thead-light">
-                <tr >
-                    <th scope="col">id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">age</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="item in web">
-                    <th scope="row">{{item.id}}</th>
-                    <th scope="row">{{item.name}}</th>
-                    <th scope="row">{{item.age}}</th>
-                </tr>
-                </tbody>
-            </table>
+            <div class="navbar navbar-light bg-light">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">age</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in web">
+                        <th scope="row">{{item.id}}</th>
+                        <th scope="row">{{item.name}}</th>
+                        <th scope="row">{{item.age}}</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

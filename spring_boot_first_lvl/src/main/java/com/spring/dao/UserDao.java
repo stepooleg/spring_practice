@@ -1,6 +1,6 @@
 package com.spring.dao;
 
-import com.spring.models.User;
+import com.spring.models.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -11,16 +11,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class UserDao {
+public class UserDao implements Dao {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public List<User> findAll() {
-        return jdbcTemplate.query("SELECT name , age FROM users", new RowMapper<User>() {
+    public List<UserModel> findAll() {
+        return jdbcTemplate.query("SELECT * FROM users", new RowMapper<UserModel>() {
             @Override
-            public User mapRow(ResultSet resultSet, int i) throws SQLException {
-                return new User(resultSet.getInt("id"),
+            public UserModel mapRow(ResultSet resultSet, int i) throws SQLException {
+                return new UserModel(resultSet.getInt("id"),
                         resultSet.getString("name"),
                         resultSet.getInt("age"));
             }

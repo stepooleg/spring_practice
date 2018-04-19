@@ -11,7 +11,7 @@ public class MvcConf {
     @Bean
     public DataSource dataSource(){
         DataSource dataSource = new DataSource();
-        dataSource.setUrl("jdbs:mysql://localhost:3306/myuserbase");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/myuserbase");
         dataSource.setUsername("root");
         dataSource.setPassword("");
         return dataSource;

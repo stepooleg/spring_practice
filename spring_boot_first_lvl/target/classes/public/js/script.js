@@ -1,8 +1,7 @@
 var app = angular.module("spring",[]);
-app.controller("AppSpr",function ($scope) {
-$scope.web=[{
-    id: "1",
-    name: "Ivan",
-    age:"23"
-}];
+app.controller("AppSpr",function ($scope,$http) {
+$scope.web=[];
+$http.get("http://localhost:8090/").then(function (response) {
+    $scope.web=response.data;
+})
 });
